@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/rameez/static/css/main.9bad8a00.css",
+    "main.js": "/rameez/static/js/main.63d19f8b.js",
+    "static/js/787.80c586cc.chunk.js": "/rameez/static/js/787.80c586cc.chunk.js",
+    "static/media/wallpaper.png": "/rameez/static/media/wallpaper.13640feb0b0b9f744828.png",
+    "static/media/aboutImg.JPG": "/rameez/static/media/aboutImg.140d8090fb43662140e4.JPG",
+    "static/media/about.png": "/rameez/static/media/about.4366e87dc21d045724f7.png",
+    "index.html": "/rameez/index.html",
+    "main.9bad8a00.css.map": "/rameez/static/css/main.9bad8a00.css.map",
+    "main.63d19f8b.js.map": "/rameez/static/js/main.63d19f8b.js.map",
+    "787.80c586cc.chunk.js.map": "/rameez/static/js/787.80c586cc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9bad8a00.css",
+    "static/js/main.63d19f8b.js"
+  ]
+}
