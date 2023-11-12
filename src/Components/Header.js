@@ -1,16 +1,26 @@
-import React, { useState } from 'react'
-import './assets/css/header.css'
+import React, { useState, useEffect } from 'react';
+import './assets/css/header.css';
 
 export default function Header(props) {
-    let newDate = new Date();
+    const [currentTime, setCurrentTime] = useState(new Date());
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentTime(new Date());
+        }, 1000);
+
+        // Cleanup the interval when the component is unmounted
+        return () => clearInterval(intervalId);
+    }, []);
+
     let date = {
-        weekday:'short',
+        weekday: 'short',
         month: 'short',
         day: 'numeric'
-    }
-    let day = newDate.toLocaleString('en-us',date)
-    let hours = newDate.getHours();
-    let minutes = newDate.getMinutes().toString().padStart(2, '0');
+    };
+    let day = currentTime.toLocaleString('en-us', date);
+    let hours = currentTime.getHours();
+    let minutes = currentTime.getMinutes().toString().padStart(2, '0');
     let time = `${hours}:${minutes}`;
 
     return (
@@ -22,5 +32,5 @@ export default function Header(props) {
                 <p>{day} {time}</p>
             </div>
         </header>
-    )
+    );
 }

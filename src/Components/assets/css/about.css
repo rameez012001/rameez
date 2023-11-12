@@ -53,11 +53,13 @@
   cursor: pointer;
 }
 #about #about_content #details aside #rsmBtn {
-  color: #007AFF;
-  font-weight: 500;
   padding: 6px 20px;
   transition: 0.1s;
   background-color: #fff;
+}
+#about #about_content #details aside #rsmBtn a {
+  color: #007AFF;
+  font-weight: 500;
 }
 #about #about_content #details aside #rsmBtn:hover {
   background-color: #f9f9f9;
