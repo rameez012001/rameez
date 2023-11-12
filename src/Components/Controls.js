@@ -1,0 +1,22 @@
+import React from 'react'
+import './assets/css/controls.css'
+
+export default function Controls(props) {
+    // function closeApp(){
+    //     return false
+    // }
+  return (
+    <div className='windowControls'>
+        <div id='red' className="dots" onClick={props.closeApp}>
+            <span></span>
+            <span></span>
+        </div>
+        <div id='yellow' className="dots">
+
+        </div>
+        <div id='green' className="dots">
+
+        </div>
+    </div>
+  )
+}

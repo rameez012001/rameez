@@ -1,0 +1,18 @@
+main {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(246, 246, 246, 0.3607843137);
+  max-width: 1244px;
+  width: fit-content;
+  height: 70px;
+  margin: 0 auto;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+main img {
+  cursor: pointer;
+}/*# sourceMappingURL=taskbar.css.map */

@@ -1,0 +1,91 @@
+#folder
+    display: flex
+    position: absolute
+    top: 15%
+    left: 50%
+    max-width: 700px
+    max-height: 400px
+    width: 100%
+    height: fit-content
+    transform: translate(-50%,-15%)
+    border-radius: 10px 
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.55), 0px 8px 40px 0px rgba(0, 0, 0, 0.25), 0px 0px 3px 0px rgba(255, 255, 255, 0.10) inset
+    #sideBar
+        width: 100%
+        max-width: 200px 
+        border-top-left-radius: 10px
+        border-bottom-left-radius: 10px
+        background-color: #ffffffb3
+        .sideBar-content
+            padding-left: 14px
+            aside
+                position: relative
+                img
+                    width: 16px
+                    position: absolute
+                    left: 7px
+                    top: 4px
+                input
+                    padding: 3px 0 3px 30px
+                    max-width: 135px
+                    border-radius: 5px
+        p
+            color: #4A4A4A
+            font-size: 13px
+            margin: 10px 0 
+        ul
+            li
+                cursor: pointer
+                margin: 8px 0 0
+                height: 30px
+                display: flex
+                background: rgba(255, 255, 255,.75)
+                align-items: center
+                padding: 0 .5em
+                p
+                img
+                    width: 16px
+                    margin-right: 8px
+    #contentArea
+        width: 100%
+        display: flex
+        gap: 15px
+        flex-direction: column
+        // padding: 34px 80px 0 47px
+        padding-top: 34px
+        background-color: #fff
+        border-top-right-radius: 10px
+        border-bottom-right-radius: 10px
+        box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.25)
+        .file-head,.file-data
+            display: flex
+            width: 100%
+            justify-content: space-between
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1) 
+        .file-head
+            padding-bottom: 8px
+            color: rgba(0, 0, 0, 0.85)
+            h2,h3
+                font-size: 13px
+                border-right: 1px solid rgba(0, 0, 0, 0.1)
+            h2
+                padding: 0 47px 
+            h3
+                padding-right: 80px
+                margin-right: 1.3em
+        .file-data
+            padding-bottom: 12px
+            color: #000000b0
+            font-weight: 600
+            div
+                display: flex
+                align-items: center
+                gap: 5px
+                font-size: 13px
+                padding-left: 20px
+                img
+                    width: 25px
+                    // margin-right: 8px
+            span
+                font-size: 13px
+                padding-right: 80px
