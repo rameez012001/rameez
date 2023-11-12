@@ -2,8 +2,12 @@ import React, { Children } from 'react'
 import Controls from './Controls'
 import './assets/css/about.css'
 import displayPic from './assets/images/aboutImg.JPG'
+import Resume from './assets/files/Resume.pdf'
 
 export default function About (props) {
+  function changeIndex(){
+    props.setIndex();
+  }
   return (
     <div className='appBox' id='about'>
         <Controls closeApp = {props.closeAll}/>
@@ -15,8 +19,8 @@ export default function About (props) {
               <h1>Rameez Hameed</h1>
               <p>Front-End Developer, focusing on the creation of captivating and user-friendly web templates.</p>
               <aside>
-                <button id='rsmBtn'>View Resume</button>
-                <button id='msgBtn'>Message</button>
+                <button id='rsmBtn'><a href={Resume} download={Resume}>View Resume</a></button>
+                <button id='msgBtn' onClick={changeIndex}>Message</button>
               </aside>
           </div>
         </div>
