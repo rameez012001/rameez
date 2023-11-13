@@ -23,7 +23,4 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:url('./Components/assets/images/wallpaper.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
 }

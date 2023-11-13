@@ -1,28 +1,59 @@
-import { useState } from 'react';
-import './App.css';
+import { useEffect, useState } from 'react';
+import './Components/assets/css/main.css'
+import OnLoad from './Components/OnLoad';
 import Header from './Components/Header';
 import Taskbar from './Components/Taskbar';
 import About from './Components/About';
 import Folder from './Components/Folder';
 import Contact from './Components/Contact';
+import bg1 from './Components/assets/images/wallpapers/wallpaper.png';
+import bg2 from './Components/assets/images/wallpapers/wallpaper1.png';
+import bg3 from './Components/assets/images/wallpapers/wallpaper2.jpg';
+
 
 function App() {
+  const [isLoading,setIsLoading] = useState(true);
   const [appName,newAppName] = useState('Files');
   const [appIndex,setAppIndex] = useState(0);
+  const backgroundImage = [bg1, bg2, bg3];
+  const [background,changeBackground] = useState(backgroundImage[0]);
+  
+  const setBackground = () => {
+    const getRandomInt = (min, max) => {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+  
+    const randomIndex = getRandomInt(0, backgroundImage.length - 1);
+    const randomElement = backgroundImage[randomIndex];
+  
+    changeBackground(randomElement);
+  };
+
+  useEffect(() => {
+    setBackground();
+  }, []); 
 
   function openApplication(id,name) {
     setAppIndex(id);
     newAppName(name);
   }
 
-  // to close the app with control components
   function closeAllFunc(){
     setAppIndex(0);
     newAppName('Apps');
   }
 
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 1800); 
+
   return (
-    <div className="App">
+    <div className="App" style={{
+      backgroundImage: `url(${background})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
+    }}>
+      {isLoading&&<OnLoad/>}
       <Header setAppName={appName}/>
       {appIndex === 1 && <About closeAll = {closeAllFunc} setIndex={()=>setAppIndex(appIndex+3)}/>}
       {appIndex === 3 && <Folder closeAll = {closeAllFunc}/>}
