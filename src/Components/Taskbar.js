@@ -12,9 +12,9 @@ export default function Taskbar(props) {
     }
     
     function open(element){
-        let appID = element.target.getAttribute('data-appID');
+        let appID = element.target.getAttribute('data-app_id');
         appID = parseInt(appID)
-        const appName = element.target.getAttribute('data-appName');
+        const appName = element.target.getAttribute('data-app_name');
         postAppName(appID,appName);
     }
     
@@ -54,7 +54,7 @@ export default function Taskbar(props) {
             
             {
             Application.map((app,id) => (
-                <img key={id} src={app.src} alt={app.alt} data-appID = {app.app_id} data-appName={app.app_name} onClick={app.onClick} />
+                <img key={id} src={app.src} alt={app.alt} data-app_id = {app.app_id} data-app_name={app.app_name} onClick={app.onClick} />
             ))
             }
             

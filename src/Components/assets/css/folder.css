@@ -1,4 +1,13 @@
+@keyframes openFolder {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 #folder {
+  animation: openFolder 0.5s;
   display: flex;
   position: absolute;
   top: 15%;
