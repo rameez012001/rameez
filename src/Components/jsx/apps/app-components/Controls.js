@@ -1,10 +1,7 @@
 import React from 'react'
-import './assets/css/controls.css'
+import '../../../assets/css/controls.css'
 
 export default function Controls(props) {
-    // function closeApp(){
-    //     return false
-    // }
   return (
     <div className='windowControls'>
         <div id='red' className="dots" onClick={props.closeApp}>

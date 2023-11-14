@@ -1,5 +1,5 @@
 import React from 'react'
-import './assets/css/onload.css'
+import '../assets/css/onload.css'
 
 export default function OnLoad() {
   return (

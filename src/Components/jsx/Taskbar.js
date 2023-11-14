@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import './assets/css/taskbar.css'
-import about from './assets/images/apps/about.png';
-import resume from './assets/images/apps/resume.png';
-import folder from './assets/images/apps/folder.png';
-import contact from './assets/images/apps/contact.png';
+import '../assets/css/taskbar.css'
+import about from '../assets/images/apps/about.png';
+import resume from '../assets/images/apps/resume.png';
+import folder from '../assets/images/apps/folder.png';
+import contact from '../assets/images/apps/contact.png';
 
 export default function Taskbar(props) {
     

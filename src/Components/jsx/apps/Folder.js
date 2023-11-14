@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Controls from './Controls'
-import './assets/css/folder.css'
-import documentIcon from './assets/images/icons/document.png'
-import desktopIcon from './assets/images/icons/desktop.png'
-import searchIcon from './assets/images/icons/searchIcon.png'
-import safari from './assets/images/icons/safari.png'
+import Controls from './app-components/Controls'
+import '../../assets/css/folder.css'
+import documentIcon from '../../assets/images/icons/document.png'
+import desktopIcon from '../../assets/images/icons/desktop.png'
+import searchIcon from '../../assets/images/icons/searchIcon.png'
+import safari from '../../assets/images/icons/safari.png'
 
 export default function Folder(props) {
     const [indexActive,setIndexActive] = useState(1)

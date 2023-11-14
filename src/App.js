@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import './Components/assets/css/main.css'
-import OnLoad from './Components/OnLoad';
-import Header from './Components/Header';
-import Taskbar from './Components/Taskbar';
-import About from './Components/About';
-import Folder from './Components/Folder';
-import Contact from './Components/Contact';
+import OnLoad from './Components/jsx/OnLoad';
+import Header from './Components/jsx/Header';
+import Taskbar from './Components/jsx/Taskbar';
+import About from './Components/jsx/apps/About';
+import Folder from './Components/jsx/apps/Folder';
+import Contact from './Components/jsx/apps/Contact';
 import bg1 from './Components/assets/images/wallpapers/wallpaper.png';
 import bg2 from './Components/assets/images/wallpapers/wallpaper1.png';
 import bg3 from './Components/assets/images/wallpapers/wallpaper2.jpg';
