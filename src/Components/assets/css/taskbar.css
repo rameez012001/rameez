@@ -1,4 +1,5 @@
 main {
+  display: flex;
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -15,4 +16,26 @@ main {
 }
 main img {
   cursor: pointer;
+}
+main #xID {
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  align-self: center;
+  margin-right: 8px;
+}
+main #instagramID {
+  width: 48px;
+  height: 48px;
+  align-self: center;
+  border-radius: 16px;
+}
+main #githubID {
+  width: 60px;
+  height: 60px;
+  align-self: center;
+  border-radius: 100%;
+}
+main #xID, main #instagramID, main #githubID {
+  background-color: #fff;
 }/*# sourceMappingURL=taskbar.css.map */

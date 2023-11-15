@@ -13,7 +13,7 @@ import bg3 from './Components/assets/images/wallpapers/wallpaper2.jpg';
 
 function App() {
   const [isLoading,setIsLoading] = useState(true);
-  const [appName,newAppName] = useState('Files');
+  const [appName,newAppName] = useState('Finder');
   const [appIndex,setAppIndex] = useState(0);
   const backgroundImage = [bg1, bg2, bg3];
   const [background,changeBackground] = useState(backgroundImage[0]);
@@ -40,7 +40,7 @@ function App() {
 
   function closeAllFunc(){
     setAppIndex(0);
-    newAppName('Apps');
+    newAppName('Finder');
   }
 
   setTimeout(() => {
