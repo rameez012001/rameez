@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/rameez/static/css/main.f35113de.css",
-    "main.js": "/rameez/static/js/main.a41444e6.js",
+    "main.css": "/rameez/static/css/main.17758e6b.css",
+    "main.js": "/rameez/static/js/main.bb5a83f2.js",
     "static/js/787.80c586cc.chunk.js": "/rameez/static/js/787.80c586cc.chunk.js",
     "static/media/wallpaper.png": "/rameez/static/media/wallpaper.13640feb0b0b9f744828.png",
     "static/media/wallpaper1.png": "/rameez/static/media/wallpaper1.48f468cb7864759f5707.png",
     "static/media/aboutImg.JPG": "/rameez/static/media/aboutImg.140d8090fb43662140e4.JPG",
+    "static/media/instagram.png": "/rameez/static/media/instagram.469cb83ec463191dffdf.png",
     "static/media/wallpaper2.jpg": "/rameez/static/media/wallpaper2.df34b3e27385a8386c30.jpg",
+    "static/media/x.png": "/rameez/static/media/x.c9d69acfaf852c0ddb71.png",
     "static/media/Resume.pdf": "/rameez/static/media/Resume.950cb34c493d40f13543.pdf",
     "static/media/about.png": "/rameez/static/media/about.4366e87dc21d045724f7.png",
     "index.html": "/rameez/index.html",
-    "main.f35113de.css.map": "/rameez/static/css/main.f35113de.css.map",
-    "main.a41444e6.js.map": "/rameez/static/js/main.a41444e6.js.map",
+    "main.17758e6b.css.map": "/rameez/static/css/main.17758e6b.css.map",
+    "main.bb5a83f2.js.map": "/rameez/static/js/main.bb5a83f2.js.map",
     "787.80c586cc.chunk.js.map": "/rameez/static/js/787.80c586cc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f35113de.css",
-    "static/js/main.a41444e6.js"
+    "static/css/main.17758e6b.css",
+    "static/js/main.bb5a83f2.js"
   ]
 }
