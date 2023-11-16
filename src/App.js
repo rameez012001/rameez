@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './Components/assets/css/main.css'
+import './Components/assets/css/global.css'
 import OnLoad from './Components/jsx/OnLoad';
 import Header from './Components/jsx/Header';
 import Taskbar from './Components/jsx/Taskbar';
@@ -7,8 +7,8 @@ import About from './Components/jsx/apps/About';
 import Folder from './Components/jsx/apps/Folder';
 import Contact from './Components/jsx/apps/Contact';
 import bg1 from './Components/assets/images/wallpapers/wallpaper.png';
-import bg2 from './Components/assets/images/wallpapers/wallpaper1.png';
-import bg3 from './Components/assets/images/wallpapers/wallpaper2.jpg';
+import bg2 from './Components/assets/images/wallpapers/wallpaper.webp';
+import bg3 from './Components/assets/images/wallpapers/wallpaper1.png';
 
 
 function App() {

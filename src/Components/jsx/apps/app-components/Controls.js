@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../../assets/css/controls.css'
 
 export default function Controls(props) {
   return (

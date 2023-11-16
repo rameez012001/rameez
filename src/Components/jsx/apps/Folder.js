@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Controls from './app-components/Controls'
-import '../../assets/css/folder.css'
 import documentIcon from '../../assets/images/icons/document.png'
 import desktopIcon from '../../assets/images/icons/desktop.png'
 import searchIcon from '../../assets/images/icons/searchIcon.png'

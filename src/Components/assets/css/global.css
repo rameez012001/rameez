@@ -1,0 +1,452 @@
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+button, input, textarea {
+  border: none;
+  outline: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "HelveticaNeue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+}
+
+@media (max-width: 1200px) {
+  body {
+    background-image: none;
+    background-color: #000;
+  }
+  body::after {
+    content: "ONLY FOR DESKTOPS";
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%);
+    color: #fff;
+  }
+  body > * {
+    display: none;
+  }
+}
+#onload {
+  background-color: #000;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+#onload h1 {
+  display: inline-block;
+  color: #fff;
+  font-size: 90px;
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+  animation: opacity 6s;
+  overflow: hidden;
+  width: 12%;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  25% {
+    width: 3%;
+  }
+  25% {
+    opacity: 0.8;
+    width: 5%;
+  }
+  25% {
+    width: 10%;
+  }
+  25% {
+    opacity: 1;
+    width: 12%;
+  }
+}
+.windowControls {
+  display: inline-flex;
+  gap: 8px;
+  padding: 14px;
+  transition: 0.2s;
+}
+.windowControls .dots {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+}
+.windowControls #red {
+  background-color: #FF5F57;
+  cursor: pointer;
+  padding: 1px;
+}
+.windowControls #red span {
+  display: block;
+  opacity: 0;
+  transition: 0.2s;
+  width: 8px;
+  height: 2px;
+  margin: 1px 1px;
+  background-color: #fff;
+}
+.windowControls #red span:first-child {
+  transform: rotate(40deg) translate(2px, 2.5px);
+}
+.windowControls #red span:last-child {
+  transform: rotate(-40deg) translate(0px, 0px);
+}
+.windowControls #red:hover span {
+  opacity: 1;
+}
+.windowControls #yellow {
+  background-color: #FEBC2E;
+}
+.windowControls #green {
+  background-color: #28C840;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.5019607843);
+  width: 100%;
+  height: 24px;
+  padding: 0 19px;
+  backdrop-filter: blur(50px);
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+}
+#header nav {
+  display: flex;
+  gap: 10px;
+}
+#header nav h1 {
+  font-size: 16px;
+}
+
+#about {
+  animation: openAbout 0.5s;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 1;
+  max-width: 660px;
+  max-height: 500px;
+  width: fit-content;
+  height: fit-content;
+  transform: translateX(-1%);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7019607843);
+  backdrop-filter: blur(1px);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.55), 0px 8px 40px 0px rgba(0, 0, 0, 0.25), 0px 0px 3px 0px rgba(255, 255, 255, 0.1) inset;
+}
+#about #about_content {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  padding-left: 27px;
+  padding-bottom: 30px;
+}
+#about #about_content #profilePhoto {
+  width: 128px;
+  height: 128px;
+  align-self: flex-end;
+}
+#about #about_content #profilePhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 -10px;
+  border-radius: 100%;
+}
+#about #about_content #details {
+  max-width: 376px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#about #about_content #details h1 {
+  font-size: 36px;
+  font-weight: 400;
+  color: #000;
+}
+#about #about_content #details p {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7019607843);
+}
+#about #about_content #details aside {
+  display: flex;
+  gap: 15px;
+}
+#about #about_content #details aside button {
+  border-radius: 5px;
+  cursor: pointer;
+}
+#about #about_content #details aside #rsmBtn {
+  padding: 6px 20px;
+  transition: 0.1s;
+  background-color: #fff;
+}
+#about #about_content #details aside #rsmBtn a {
+  color: #007AFF;
+  font-weight: 500;
+}
+#about #about_content #details aside #rsmBtn:hover {
+  background-color: #f9f9f9;
+}
+#about #about_content #details aside #msgBtn {
+  color: #fff;
+  padding: 6px 35px;
+  transition: 0.1s;
+  background-color: #007AFF;
+}
+#about #about_content #details aside #msgBtn:hover {
+  background-color: #006cdf;
+}
+
+#folder {
+  animation: fadeIn 0.5s;
+  display: flex;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  max-width: 700px;
+  max-height: 400px;
+  width: 100%;
+  height: fit-content;
+  transform: translate(-50%, -15%);
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.55), 0px 8px 40px 0px rgba(0, 0, 0, 0.25), 0px 0px 3px 0px rgba(255, 255, 255, 0.1) inset;
+}
+#folder #sideBar {
+  width: 100%;
+  max-width: 200px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7019607843);
+}
+#folder #sideBar .sideBar-content {
+  padding-left: 14px;
+}
+#folder #sideBar .sideBar-content aside {
+  position: relative;
+}
+#folder #sideBar .sideBar-content aside img {
+  width: 16px;
+  position: absolute;
+  left: 7px;
+  top: 4px;
+}
+#folder #sideBar .sideBar-content aside input {
+  padding: 3px 0 3px 30px;
+  max-width: 135px;
+  border-radius: 5px;
+}
+#folder #sideBar p {
+  color: #4A4A4A;
+  font-size: 13px;
+  margin: 10px 0;
+}
+#folder #sideBar ul li {
+  cursor: pointer;
+  margin: 8px 0 0;
+  height: 30px;
+  display: flex;
+  background: rgba(255, 255, 255, 0.75);
+  align-items: center;
+  padding: 0 0.5em;
+}
+#folder #sideBar ul li img {
+  width: 16px;
+  margin-right: 8px;
+}
+#folder #contentArea {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  padding-top: 34px;
+  background-color: #ffffff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.25);
+}
+#folder #contentArea .file-head, #folder #contentArea .file-data {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#folder #contentArea .file-head {
+  padding-bottom: 8px;
+  color: rgba(0, 0, 0, 0.85);
+}
+#folder #contentArea .file-head h2, #folder #contentArea .file-head h3 {
+  font-size: 13px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+#folder #contentArea .file-head h2 {
+  padding: 0 47px;
+}
+#folder #contentArea .file-head h3 {
+  padding-right: 80px;
+  margin-right: 1.3em;
+}
+#folder #contentArea .file-data {
+  padding-bottom: 12px;
+  color: rgba(0, 0, 0, 0.6901960784);
+  font-weight: 600;
+}
+#folder #contentArea .file-data div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  padding-left: 20px;
+}
+#folder #contentArea .file-data div img {
+  width: 25px;
+}
+#folder #contentArea .file-data span {
+  font-size: 13px;
+  padding-right: 80px;
+}
+
+#Contact {
+  animation: fadeIn 0.2s;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  max-width: 390px;
+  max-height: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.55), 0px 8px 40px 0px rgba(0, 0, 0, 0.25), 0px 0px 3px 0px rgba(255, 255, 255, 0.1) inset;
+  backdrop-filter: blur(50px);
+  background-color: #f6f6f6;
+}
+#Contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 35px 54px;
+}
+#Contact form label {
+  color: rgba(0, 0, 0, 0.5019607843);
+  font-size: 13px;
+}
+#Contact form input, #Contact form textarea {
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  padding: 3px;
+  max-width: 320px;
+  width: 100%;
+  color: #000;
+}
+#Contact form textarea {
+  max-height: 70px;
+  color: #000;
+}
+#Contact form button {
+  width: 100%;
+  max-width: 320px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 0;
+  border-radius: 5px;
+  text-align: center;
+  transition: 0.1s;
+  background-color: #007AFF;
+}
+#Contact form button:hover {
+  background-color: #006cdf;
+}
+
+#taskBar {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(246, 246, 246, 0.3607843137);
+  backdrop-filter: blur(1px);
+  max-width: 1244px;
+  width: fit-content;
+  height: 70px;
+  margin: 0 auto;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+#taskBar img {
+  cursor: pointer;
+}
+#taskBar #xID {
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  align-self: center;
+  margin-right: 8px;
+}
+#taskBar #instagramID {
+  width: 48px;
+  height: 48px;
+  align-self: center;
+  border-radius: 16px;
+}
+#taskBar #githubID {
+  width: 60px;
+  height: 60px;
+  align-self: center;
+  border-radius: 100%;
+}
+#taskBar #xID, #taskBar #instagramID, #taskBar #githubID {
+  background-color: #fff;
+}
+
+@keyframes openAbout {
+  0% {
+    right: -50%;
+    opacity: 0.5;
+  }
+  100% {
+    right: 0%;
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=global.css.map */

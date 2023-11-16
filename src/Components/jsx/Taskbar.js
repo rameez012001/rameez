@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../assets/css/taskbar.css'
+// import '../assets/css/taskbar.css'
 import about from '../assets/images/apps/about.png';
 import resume from '../assets/images/apps/resume.png';
 import folder from '../assets/images/apps/folder.png';
@@ -90,7 +90,7 @@ export default function Taskbar(props) {
     ]
 
     return (
-        <main>
+        <main id='taskBar'>
             
             {
             Application.map((app,id) => (

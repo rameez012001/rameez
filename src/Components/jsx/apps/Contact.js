@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import Controls from './app-components/Controls'
-import '../../assets/css/contact.css'
 
 export default function Contact(props) {
   const [values,setValues] = useState({

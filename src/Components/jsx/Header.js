@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../assets/css/header.css';
 
 export default function Header(props) {
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -24,10 +23,10 @@ export default function Header(props) {
     let time = `${hours}:${minutes}`;
 
     return (
-        <header>
-            <div>
-                <h1 id='app'>{props.setAppName}</h1>
-            </div>
+        <header id='header'>
+            <nav>
+                <h1>{props.setAppName}</h1>
+            </nav>
             <div className='date-time'>
                 <p>{day} {time}</p>
             </div>

@@ -1,6 +1,5 @@
 import React, { Children } from 'react'
 import Controls from './app-components/Controls'
-import '../../assets/css/about.css'
 import displayPic from '../../assets/images/aboutImg.JPG'
 import Resume from '../../assets/files/Resume.pdf'
 
