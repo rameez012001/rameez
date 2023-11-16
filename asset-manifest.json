@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/rameez/static/css/main.01ac1672.css",
-    "main.js": "/rameez/static/js/main.40239ff8.js",
+    "main.css": "/rameez/static/css/main.e65c2706.css",
+    "main.js": "/rameez/static/js/main.fc5b34d3.js",
     "static/js/787.80c586cc.chunk.js": "/rameez/static/js/787.80c586cc.chunk.js",
     "static/media/wallpaper.png": "/rameez/static/media/wallpaper.13640feb0b0b9f744828.png",
     "static/media/wallpaper1.png": "/rameez/static/media/wallpaper1.48f468cb7864759f5707.png",
     "static/media/aboutImg.JPG": "/rameez/static/media/aboutImg.140d8090fb43662140e4.JPG",
     "static/media/instagram.png": "/rameez/static/media/instagram.469cb83ec463191dffdf.png",
-    "static/media/wallpaper2.jpg": "/rameez/static/media/wallpaper2.56ced3c03e83ecdbc573.jpg",
+    "static/media/wallpaper.webp": "/rameez/static/media/wallpaper.73487c27abbfb5ed965f.webp",
     "static/media/x.png": "/rameez/static/media/x.c9d69acfaf852c0ddb71.png",
     "static/media/Resume.pdf": "/rameez/static/media/Resume.950cb34c493d40f13543.pdf",
     "static/media/about.png": "/rameez/static/media/about.4366e87dc21d045724f7.png",
     "index.html": "/rameez/index.html",
-    "main.01ac1672.css.map": "/rameez/static/css/main.01ac1672.css.map",
-    "main.40239ff8.js.map": "/rameez/static/js/main.40239ff8.js.map",
+    "main.e65c2706.css.map": "/rameez/static/css/main.e65c2706.css.map",
+    "main.fc5b34d3.js.map": "/rameez/static/js/main.fc5b34d3.js.map",
     "787.80c586cc.chunk.js.map": "/rameez/static/js/787.80c586cc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.01ac1672.css",
-    "static/js/main.40239ff8.js"
+    "static/css/main.e65c2706.css",
+    "static/js/main.fc5b34d3.js"
   ]
 }
