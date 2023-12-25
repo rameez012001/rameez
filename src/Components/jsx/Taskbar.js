@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-// import '../assets/css/taskbar.css'
+import React from 'react'
 import about from '../assets/images/apps/about.png';
 import resume from '../assets/images/apps/resume.png';
 import folder from '../assets/images/apps/folder.png';
@@ -9,17 +8,13 @@ import instagram from '../assets/images/apps/instagram.png';
 import x from '../assets/images/apps/x.png';
 import github from '../assets/images/apps/github.png';
 
-export default function Taskbar(props) {
-    
-    function postAppName(id,name){
-        props.posted(id,name);
-    }
+function Taskbar(props) {
     
     function open(element){
         let appID = element.target.getAttribute('data-app_id');
-        appID = parseInt(appID)
         const appName = element.target.getAttribute('data-app_name');
-        postAppName(appID,appName);
+        appID = parseInt(appID);
+        props.post(appID,appName);
     }
     
     const Application = [
@@ -101,3 +96,5 @@ export default function Taskbar(props) {
         </main>
     )
 }
+
+export default Taskbar;
