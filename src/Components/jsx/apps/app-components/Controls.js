@@ -7,8 +7,8 @@ export default function Controls(props) {
             <span></span>
             <span></span>
         </div>
-        <div id='yellow' className="dots">
-
+        <div id='yellow' className="dots inactve">
+            <span></span>
         </div>
         <div id='green' className="dots">
 

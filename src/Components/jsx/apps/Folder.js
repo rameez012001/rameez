@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Controls from './app-components/Controls'
 import documentIcon from '../../assets/images/icons/document.png'
-import desktopIcon from '../../assets/images/icons/desktop.png'
 import searchIcon from '../../assets/images/icons/searchIcon.png'
 import safari from '../../assets/images/icons/safari.png'
 
 export default function Folder(props) {
-    const [indexActive,setIndexActive] = useState(1)
 
-    const arry = [
+    const files = [
         {
             projectName:'Uniqq',
-            link:'https://rameez012001.github.io/Uniiq/',
+            link:'https://wpriverthemes.com/HTML/uniiq/dark-mode/home.html',
             date:'26/08/23',
             time:'4:40AM'
         },
@@ -52,9 +50,9 @@ export default function Folder(props) {
             </div>  
             
             {
-            arry.map((element,indexID)=> {
+            files.map((element,indexID)=> {
                 return(
-                    <a key={indexID} href={element.link} className='file-data' target='_blank'>
+                    <a key={indexID} href={element.link} className='file-data' target='_blank' rel='noreferrer'>
                         <div><img src={safari} alt="safari" /><p>{element.projectName}</p></div>
                         <span>{element.date},{element.time}</span>
                     </a>

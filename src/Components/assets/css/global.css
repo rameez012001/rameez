@@ -98,6 +98,12 @@ body {
   height: 12px;
   border-radius: 100%;
 }
+.windowControls .inactive {
+  background-color: #6e6e6e !important;
+}
+.windowControls .inactive span {
+  display: none !important;
+}
 .windowControls #red {
   background-color: #FF5F57;
   cursor: pointer;
@@ -109,8 +115,8 @@ body {
   transition: 0.2s;
   width: 8px;
   height: 2px;
-  margin: 1px 1px;
-  background-color: #fff;
+  margin: 1px 1.33px;
+  background-color: #964632;
 }
 .windowControls #red span:first-child {
   transform: rotate(40deg) translate(2px, 2.5px);
@@ -122,7 +128,23 @@ body {
   opacity: 1;
 }
 .windowControls #yellow {
+  position: relative;
   background-color: #FEBC2E;
+}
+.windowControls #yellow span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  background-color: #966f1b;
+  width: 8px;
+  height: 2px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.windowControls #yellow:hover span {
+  opacity: 1;
 }
 .windowControls #green {
   background-color: #28C840;

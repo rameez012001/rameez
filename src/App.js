@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Components/assets/css/global.css'
 import OnLoad from './Components/jsx/OnLoad';
 import Header from './Components/jsx/Header';
@@ -24,9 +24,12 @@ function App() {
     newAppName('Finder');
   }
 
-  setTimeout(() => {
-    setIsLoading(false);
-  }, 1800); 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1800); 
+  }, [])
+  
 
   return (
     <div className="App" style={{
