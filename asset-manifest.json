@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/rameez/static/css/main.a44d1c5b.css",
-    "main.js": "/rameez/static/js/main.48568fdd.js",
-    "static/js/453.191b95e9.chunk.js": "/rameez/static/js/453.191b95e9.chunk.js",
-    "index.html": "/rameez/index.html",
-    "main.a44d1c5b.css.map": "/rameez/static/css/main.a44d1c5b.css.map",
-    "main.48568fdd.js.map": "/rameez/static/js/main.48568fdd.js.map",
-    "453.191b95e9.chunk.js.map": "/rameez/static/js/453.191b95e9.chunk.js.map"
+    "main.css": "/static/css/main.a44d1c5b.css",
+    "main.js": "/static/js/main.baef03c3.js",
+    "static/js/453.191b95e9.chunk.js": "/static/js/453.191b95e9.chunk.js",
+    "index.html": "/index.html",
+    "main.a44d1c5b.css.map": "/static/css/main.a44d1c5b.css.map",
+    "main.baef03c3.js.map": "/static/js/main.baef03c3.js.map",
+    "453.191b95e9.chunk.js.map": "/static/js/453.191b95e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a44d1c5b.css",
-    "static/js/main.48568fdd.js"
+    "static/js/main.baef03c3.js"
   ]
 }
