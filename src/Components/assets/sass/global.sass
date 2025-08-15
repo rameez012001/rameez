@@ -1,10 +1,143 @@
-@import 'colors'
-@import 'main'
-@import 'onload'
-@import 'controls'
-@import 'header'
-@import 'about'
-@import 'folder'
-@import 'contact'
-@import 'taskbar'
-@import 'keyframes'
+// Variables
+$font-stack: -apple-system, BlinkMacSystemFont, Roboto, sans-serif
+$primary-color: #555
+$link-color: #007bff
+
+// Mixins
+@mixin clearfix
+    &::after
+        content: ""
+        display: table
+        clear: both
+
+// Reset
+*,
+*::before,
+*::after
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+html
+    font-family: sans-serif
+    -ms-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
+
+body
+    font-family: $font-stack
+    color: $primary-color
+    background: #fff
+    line-height: 1.6
+    max-width: 750px
+    margin: 0 auto
+    padding: 0 5px
+
+// Links
+a
+    color: $link-color
+    text-decoration: none
+    &:hover,
+    &:focus
+        text-decoration: underline
+        outline: none
+
+// Headings
+h1, h2, h3, h4, h5, h6
+    color: #333
+    font-weight: bold
+    margin-bottom: 1rem
+
+// Lists
+ul, ol
+    margin-left: 2rem
+
+// Images
+img
+    max-width: 100%
+    height: auto
+    display: block
+
+// Utility classes
+.clearfix
+    @include clearfix
+
+.paragraph
+        margin-bottom: 10px     
+
+.date,#quote
+    color: #999
+    font-size: 14px
+
+#quote
+    font-style: italic
+    max-width: 400px
+    text-align: center
+    margin: 20px auto
+    padding: 10px
+    border-left: 4px solid #2b6cc2
+    background-color: #f9f9f9
+
+header
+    border-bottom: 1px solid #eaeaea
+    padding-bottom: 20px
+    margin: 20px 0
+    .header-content
+        display: flex
+        justify-content: space-between
+        align-items: center
+        #name
+            margin: 0
+            a
+                color: $primary-color
+                text-decoration: none
+                font-size: 24px
+                font-weight: bold
+                
+
+#twitter-btn
+    position: relative
+    box-sizing: border-box
+    padding: 8px 12px 
+    background-color: #000
+    color: #fff
+    border-radius: 9999px
+    font-weight: 500
+    cursor: pointer
+    position: relative
+    font-size: 14px
+    #logo
+        position: relative
+        top: 2px
+        display: inline-block
+        width: 16px
+        height: 16px
+        background: transparent 0 0 no-repeat
+        background-image: none
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg viewBox='5 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' fill='none'/%3E%3Cpath d='M17.9686 14.1623L26.7065 4H24.6358L17.0488 12.8238L10.9891 4H4L13.1634 17.3432L4 28H6.07069L14.0827 18.6817L20.4822 28H27.4714L17.9681 14.1623H17.9686ZM15.1326 17.4607L14.2041 16.132L6.81679 5.55961H9.99723L15.9589 14.0919L16.8873 15.4206L24.6368 26.5113H21.4564L15.1326 17.4612V17.4607Z' fill='white'/%3E%3C/svg%3E%0A")
+.nav-links
+    display: flex
+    gap: 20px
+    list-style: none
+    margin: 0
+    padding: 0
+
+.content-container
+    border-bottom: 1px solid #eaeaea
+    padding-bottom: 20px
+    margin-bottom: 20px
+    ul
+        li
+            list-style: inside 
+.content-header
+    h1
+        color: #2b6cc2
+        font-size: 24px
+    
+.content
+    a
+        display: block
+        text-decoration: underline
+        color: $primary-color
+        margin-bottom: 10px
+
+                   
