@@ -1,44 +1,6 @@
 import React from "react";
-
+import { reads, articles } from "../assets/data/data";
 function Activities() {
-  const reads = [
-    {
-      title: "1984",
-      author: "George Orwell",
-      type: "favorite",
-    },
-    {
-      title: "Silent Patient",
-      author: "Alex Micaelides",
-      type: "favorite",
-    },
-    {
-      title: "Crime & Punishment",
-      author: "Fyodor Dostoevsky",
-      type: "current",
-    },
-    {
-      title: "The Seven Husbands of Evelyn Hugo",
-      author: "Taylor Jenkins Reid",
-      type: "current",
-    },
-  ];
-
-  const articles = [
-    {
-      url: "https://www.theepochtimes.com/falun-gong-founder-li-hongzhi-publishes-why-do-human-beings-exist_5000952.html",
-      name: "Why Do Human Beings Exist? (Epoch Times)",
-    },
-    {
-      url: "https://www.bbc.com/worklife/article/20230402-the-entrepreneurs-who-regret-starting-businesses?utm_source=pocket_mylist",
-      name: "Entrepreneurs Who Regret Starting Businesses (BBC)",
-    },
-    {
-      url: "https://medium.com/intuitionmachine/the-dance-of-abstraction-and-reality-discovering-computings-full-potential-48b37bea39bb",
-      name: "The Dance of Abstraction and Reality (Medium)",
-    },
-  ];
-
   return (
     <div className="activities">
       <div className="content-container">
@@ -47,12 +9,12 @@ function Activities() {
         </div>
         <div className="content">
           <p className="paragraph">
-            Only started reading books in the summer after finishing school.
-            Mostly sticked to romance novels, as they satisfied what I was not
-            experiencing. Over time, I began exploring other genres by browsing
-            Amazon for books with above-average reviews and high ratings. That’s
-            how I discovered my first crime thrillers, which kept me hooked, and
-            classics.
+            When I first got into reading, it was all about romance novels.
+            They were giving me the stuff I wasn’t living. And when I didn’t
+            know what to pick up next, I just hit up Amazon, looking at
+            those five-star deals and solid reviews. That’s how I tripped into
+            my first crime thrillers, kept me hooked, and then I even slid into
+            some classics.
           </p>
           <div>
             <p>
@@ -94,7 +56,7 @@ function Activities() {
         </div>
         <div className="content">
           <p className="paragraph">
-            These are the articles I came across and thought were worth sharing:
+            Articles that you might find interesting.
           </p>
           <ul>
             {articles.map((article, idx) => (

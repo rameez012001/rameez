@@ -9,7 +9,7 @@ function Project() {
         </div>
         <div className="content">
           <p className="paragraph">
-            Here are some of the projects I have worked on.
+            Codes I have typed and things I have built.
           </p>
           <ul>
             <i>soon to be updated</i>
