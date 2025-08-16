@@ -1,4 +1,3 @@
-import React from "react";
 import { reads, articles, websites } from "../assets/data/data";
 function Activities() {
   return (
@@ -9,10 +8,9 @@ function Activities() {
         </div>
         <div className="content">
           <p className="paragraph">
-            At first I was all about those romance novels. They
-            were giving me the stuff I wasn’t living. Some how I ended up
-            reading my first crime thrillers and even
-            slid into some classics.
+            My reading began with romance novels. They were giving me the stuff
+            I wasn’t living. Somehow I ended up reading my first crime thrillers
+            and even slid into some classics.
           </p>
           <div>
             <p>
@@ -53,7 +51,7 @@ function Activities() {
           <h1>Websites</h1>
         </div>
         <div className="content">
-          <p className="paragraph">Some oddly cool websites</p>
+          <p className="paragraph">Some oddly cool websites:</p>
           <ul>
             {websites.map((website, idx) => (
               <a
@@ -74,7 +72,7 @@ function Activities() {
           <h1>Articles</h1>
         </div>
         <div className="content">
-          <p className="paragraph">Articles that worth sharing</p>
+          <p className="paragraph">Sharing some good reads:</p>
           <ul>
             {articles.map((article, idx) => (
               <a

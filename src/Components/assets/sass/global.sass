@@ -28,9 +28,11 @@ body
     color: $primary-color
     background: #fff
     line-height: 1.6
-    max-width: 750px
+    max-width: 600px
     margin: 0 auto
     padding: 0 5px
+    @media screen and (max-width: 600px)
+        padding: 0 10px
 
 // Links
 a
@@ -62,11 +64,15 @@ img
     @include clearfix
 
 .paragraph
-        margin-bottom: 10px     
+    margin-bottom: 10px
+    @media screen and (max-width: 600px)
+        font-size: 14px
 
 .date,#quote
     color: #999
     font-size: 14px
+    @media screen and (max-width: 600px)
+        font-size: 12px
 
 #quote
     font-style: italic
@@ -76,11 +82,15 @@ img
     padding: 10px
     border-left: 4px solid #2b6cc2
     background-color: #f9f9f9
+    @media screen and (max-width: 600px)
+        padding: 5px
 
 header
     border-bottom: 1px solid #eaeaea
     padding-bottom: 20px
     margin: 20px 0
+    @media screen and (max-width: 600px)
+        margin: 10px 0
     .header-content
         display: flex
         justify-content: space-between
@@ -92,12 +102,13 @@ header
                 text-decoration: none
                 font-size: 24px
                 font-weight: bold
-                
+                @media screen and (max-width: 600px)
+                    font-size: 20px
 
 #twitter-btn
     position: relative
     box-sizing: border-box
-    padding: 8px 12px 
+    padding: 8px 12px
     background-color: #000
     color: #fff
     border-radius: 9999px
@@ -105,6 +116,10 @@ header
     cursor: pointer
     position: relative
     font-size: 14px
+    text-decoration: none
+    @media screen and (max-width: 600px)
+        padding: 6px 10px
+        font-size: 11px
     #logo
         position: relative
         top: 2px
@@ -114,12 +129,20 @@ header
         background: transparent 0 0 no-repeat
         background-image: none
         background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg viewBox='5 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' fill='none'/%3E%3Cpath d='M17.9686 14.1623L26.7065 4H24.6358L17.0488 12.8238L10.9891 4H4L13.1634 17.3432L4 28H6.07069L14.0827 18.6817L20.4822 28H27.4714L17.9681 14.1623H17.9686ZM15.1326 17.4607L14.2041 16.132L6.81679 5.55961H9.99723L15.9589 14.0919L16.8873 15.4206L24.6368 26.5113H21.4564L15.1326 17.4612V17.4607Z' fill='white'/%3E%3C/svg%3E%0A")
+        @media screen and (max-width: 600px)
+            width: 12px
+            height: 12px
+            top: 1px
+
 .nav-links
     display: flex
     gap: 20px
     list-style: none
     margin: 0
     padding: 0
+    @media screen and (max-width: 600px)
+        gap: 8px
+        font-size: 14px
 
 .content-container
     border-bottom: 1px solid #eaeaea
@@ -127,12 +150,14 @@ header
     margin-bottom: 20px
     ul
         li
-            list-style: inside 
+            list-style: inside
 .content-header
     h1
         color: #2b6cc2
         font-size: 24px
-    
+        @media screen and (max-width: 600px)
+            font-size: 18px
+
 .content
     a
         display: block
@@ -140,4 +165,18 @@ header
         color: $primary-color
         margin-bottom: 10px
 
-                   
+.skeleton-card
+    height: 20px
+    margin: 10px 0
+    background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%)
+    background-size: 200% 100%
+    animation: shimmer 3s infinite
+    border-radius: 4px
+    @media screen and (max-width: 600px)
+        height: 15px
+        margin: 5px 0
+    @keyframes shimmer
+        from
+            background-position: 200% 0
+        to
+            background-position: -200% 0

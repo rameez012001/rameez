@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 
 function Home() {
   const [blog, setBlog] = useState([]);
-
+  const [loading, setLoading] = useState(false);
   const fetchBlog = async () => {
+    setLoading(true);
     try {
       const response = await fetch(
         "https://blog-backend-dwxk.onrender.com/posts"
@@ -12,6 +13,8 @@ function Home() {
       setBlog(data);
     } catch (error) {
       console.error("Error fetching blog data:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -21,27 +24,31 @@ function Home() {
 
   return (
     <div className="home">
-      {blog.map((post) => (
-        <div key={post.id} className="content-container">
-          <div className="content-header">
-            <span className="date">
-              {new Date(post.date).toLocaleDateString("en-IN", {
-                day: "2-digit",
-                month: "short",
-                year: "numeric",
-              })}
-            </span>
-            <h1>{post.title}</h1>
-          </div>
-          <div className="content">
-            {post.content.split("\n").map((paragraph, index) => (
-              <p key={index} className="paragraph">
-                {paragraph.trim()}
-              </p>
-            ))}
-          </div>
-        </div>
-      ))}
+      {loading
+        ? Array(10)
+            .fill(0)
+            .map((_, i) => <div key={i} className="skeleton-card"></div>)
+        : blog.map((post) => (
+            <div key={post.id} className="content-container">
+              <div className="content-header">
+                <span className="date">
+                  {new Date(post.date).toLocaleDateString("en-IN", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </span>
+                <h1>{post.title}</h1>
+              </div>
+              <div className="content">
+                {post.content.split("\n").map((paragraph, index) => (
+                  <p key={index} className="paragraph">
+                    {paragraph.trim()}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ))}
     </div>
   );
 }
