@@ -1,8 +1,54 @@
+@use "sass:map"
 // Variables
 $font-stack: -apple-system, BlinkMacSystemFont, Roboto, sans-serif
-$primary-color: #555
-$header-color: #2b6cc2
-$link-color: #6c757d
+$black: #000,
+$white: #fff,
+
+$light-theme: (
+backgroundcolor: #fff,
+textcolor: #000,
+primary: #555,
+header: #2b6cc2,
+link: #6c757d,
+    list-marker: #999,
+    skeleton-gradient-start: #eee,
+    skeleton-gradient-end: #ddd,
+    skeleton-bg: #f9f9f9,
+    border: #eaeaea,
+)
+$dark-theme: (
+    backgroundcolor: #000,
+    textcolor: #fff,
+    primary: #ccc,
+    header: #90caf9,
+    link: #adb5bd,
+        list-marker: #777,
+        skeleton-gradient-start: #333,
+        skeleton-gradient-end: #444,
+        skeleton-bg: #222,
+        border: #444,
+)
+
+@mixin theme($map)
+    --bg-color: #{map.get($map, backgroundcolor)}
+    --text-color: #{map.get($map, textcolor)}
+    --primary-color: #{map.get($map, primary)}
+    --header-color: #{map.get($map, header)}
+    --link-color: #{map.get($map, link)}
+    --list-marker-color: #{map.get($map, list-marker)}
+    --skeleton-gradient-start: #{map.get($map, skeleton-gradient-start)}
+    --skeleton-gradient-end: #{map.get($map, skeleton-gradient-end)}
+    --skeleton-bg: #{map.get($map, skeleton-bg)}
+    --border-color: #{map.get($map, border)}
+    --black: #{map.get($map, black)}
+    --white: #{map.get($map, white)}
+    --link-color-dark: darken(var(--link-color), 20%)
+
+body.theme--light
+  @include theme($light-theme)
+
+body.theme--dark
+  @include theme($dark-theme)
 
 // Mixins
 @mixin clearfix
@@ -26,8 +72,8 @@ html
 
 body
     font-family: $font-stack
-    color: $primary-color
-    background: #fff
+    color: var(--primary-color)
+    background: var(--bg-color)
     line-height: 1.6
     max-width: 600px
     margin: 0 auto
@@ -37,16 +83,16 @@ body
 
 // Links
 a
-    color: $link-color
+    color: var(--link-color)
     text-decoration: none
     &:hover,
     &:focus
         text-decoration: underline
         outline: none
+        color: var(--link-color-dark)
 
 // Headings
 h1, h2, h3, h4, h5, h6
-    color: #333
     font-weight: bold
     margin-bottom: 1rem
 
@@ -70,19 +116,19 @@ img
         font-size: 14px
 
 .date,#quote
-    color: #999
+    color: var(--list-marker-color)
     font-size: 14px
     @media screen and (max-width: 600px)
         font-size: 12px
 
 .skeleton-container
-    margin: 30px 0    
+    margin: 30px 0
     @media screen and (max-width: 600px)
         margin: 20px 0
 .skeleton-card
     height: 20px
     margin: 10px 0
-    background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%)
+    background: linear-gradient(90deg, var(--skeleton-gradient-start) 25%, var(--skeleton-gradient-end) 50%, var(--skeleton-gradient-start) 75%)
     background-size: 200% 100%
     animation: shimmer 3s infinite
     border-radius: 4px
@@ -102,10 +148,7 @@ img
         align-items: center
         font-size: 14px
         font-weight: 500
-        color: $link-color
         text-decoration: none
-        &:hover
-            color: darken($link-color, 20%)
         &::before
             content: "«"
             margin-right: 3px
@@ -119,13 +162,13 @@ img
     text-align: center
     margin: 20px auto
     padding: 10px
-    border-left: 4px solid $header-color
-    background-color: #f9f9f9
+    border-left: 4px solid var(--header-color)
+    background-color: var(--skeleton-bg)
     @media screen and (max-width: 600px)
         padding: 5px
 
 header
-    border-bottom: 1px solid #eaeaea
+    border-bottom: 1px solid var(--border-color)
     padding-bottom: 15px
     margin: 20px 0
     @media screen and (max-width: 600px)
@@ -137,7 +180,7 @@ header
         #name
             margin: 0
         a
-            color: $primary-color
+            color: var(--primary-color)
             text-decoration: none
             font-size: 24px
             font-weight: bold
@@ -148,8 +191,9 @@ header
     position: relative
     box-sizing: border-box
     padding: 8px 12px
-    background-color: #000
-    color: #fff
+    background-color: $black
+    color: $white
+    border: 1px solid var(--text-color)
     border-radius: 9999px
     font-weight: 500
     cursor: pointer
@@ -182,9 +226,6 @@ header
     li
         font-size: 14px
         a
-            color: $link-color
-            &.active,&:hover
-                color: darken($link-color, 50%)
             &:hover,
             &:focus
                 text-decoration: none
@@ -192,7 +233,7 @@ header
         gap: 15px
 
 .content-container
-    border-bottom: 1px solid #eaeaea
+    border-bottom: 1px solid var(--border-color)
     padding-bottom: 20px
     margin-bottom: 20px
     ul
@@ -200,7 +241,7 @@ header
             list-style: inside
 .content-header
     h1
-        color: $header-color
+        color: var(--header-color)
         font-size: 20px
         font-weight: 400
         @media screen and (max-width: 600px)
@@ -210,6 +251,22 @@ header
     a
         display: block
         text-decoration: underline
-        color: $primary-color
         margin-bottom: 10px
-
+.theme-toggler
+    display: flex
+    justify-content: flex-end
+    @media screen and ( max-width: 600px )
+        padding: 10px
+.theme-toggle
+    button
+        padding: 0.5rem 1rem
+        border-radius: 1rem
+        border: 1px solid var(--border-color)
+        background: var(--skeleton-bg)
+        color: var(--primary-color)
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1)
+        cursor: pointer
+        transition: color 0.3s ease
+        @media screen and (max-width: 600px)
+            padding: 0.4rem 0.8rem
+            font-size: 14px
