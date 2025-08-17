@@ -1,7 +1,13 @@
+import { Link } from "react-router-dom";
 import { reads, articles, websites } from "../assets/data/data";
 function Activities() {
   return (
     <div className="activities">
+      <div className="back-link-container">
+        <Link to="/" className="back-link">
+          Back to blog
+        </Link>
+      </div>
       <div className="content-container">
         <div className="content-header">
           <h1>Reads</h1>

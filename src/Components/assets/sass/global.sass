@@ -1,7 +1,8 @@
 // Variables
 $font-stack: -apple-system, BlinkMacSystemFont, Roboto, sans-serif
 $primary-color: #555
-$link-color: #007bff
+$header-color: #2b6cc2
+$link-color: #6c757d
 
 // Mixins
 @mixin clearfix
@@ -74,20 +75,58 @@ img
     @media screen and (max-width: 600px)
         font-size: 12px
 
+.skeleton-container
+    margin: 30px 0    
+    @media screen and (max-width: 600px)
+        margin: 20px 0
+.skeleton-card
+    height: 20px
+    margin: 10px 0
+    background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%)
+    background-size: 200% 100%
+    animation: shimmer 3s infinite
+    border-radius: 4px
+    @media screen and (max-width: 600px)
+        height: 15px
+        margin: 5px 0
+    @keyframes shimmer
+        from
+            background-position: 200% 0
+        to
+            background-position: -200% 0
+
+.back-link-container
+    margin-bottom: 20px
+    .back-link
+        display: inline-flex
+        align-items: center
+        font-size: 14px
+        font-weight: 500
+        color: $link-color
+        text-decoration: none
+        &:hover
+            color: darken($link-color, 20%)
+        &::before
+            content: "«"
+            margin-right: 3px
+            font-size: 14px
+    @media screen and (max-width: 600px)
+        margin-bottom: 10px
+
 #quote
     font-style: italic
     max-width: 400px
     text-align: center
     margin: 20px auto
     padding: 10px
-    border-left: 4px solid #2b6cc2
+    border-left: 4px solid $header-color
     background-color: #f9f9f9
     @media screen and (max-width: 600px)
         padding: 5px
 
 header
     border-bottom: 1px solid #eaeaea
-    padding-bottom: 20px
+    padding-bottom: 15px
     margin: 20px 0
     @media screen and (max-width: 600px)
         margin: 10px 0
@@ -97,13 +136,13 @@ header
         align-items: center
         #name
             margin: 0
-            a
-                color: $primary-color
-                text-decoration: none
-                font-size: 24px
-                font-weight: bold
-                @media screen and (max-width: 600px)
-                    font-size: 20px
+        a
+            color: $primary-color
+            text-decoration: none
+            font-size: 24px
+            font-weight: bold
+            @media screen and (max-width: 600px)
+                font-size: 20px
 
 #twitter-btn
     position: relative
@@ -140,9 +179,17 @@ header
     list-style: none
     margin: 0
     padding: 0
-    @media screen and (max-width: 600px)
-        gap: 8px
+    li
         font-size: 14px
+        a
+            color: $link-color
+            &.active,&:hover
+                color: darken($link-color, 50%)
+            &:hover,
+            &:focus
+                text-decoration: none
+    @media screen and (max-width: 600px)
+        gap: 15px
 
 .content-container
     border-bottom: 1px solid #eaeaea
@@ -153,8 +200,9 @@ header
             list-style: inside
 .content-header
     h1
-        color: #2b6cc2
-        font-size: 24px
+        color: $header-color
+        font-size: 20px
+        font-weight: 400
         @media screen and (max-width: 600px)
             font-size: 18px
 
@@ -165,18 +213,3 @@ header
         color: $primary-color
         margin-bottom: 10px
 
-.skeleton-card
-    height: 20px
-    margin: 10px 0
-    background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%)
-    background-size: 200% 100%
-    animation: shimmer 3s infinite
-    border-radius: 4px
-    @media screen and (max-width: 600px)
-        height: 15px
-        margin: 5px 0
-    @keyframes shimmer
-        from
-            background-position: 200% 0
-        to
-            background-position: -200% 0

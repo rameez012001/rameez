@@ -1,9 +1,15 @@
 import React from "react";
 import { about } from "../assets/data/data";
+import { Link } from "react-router-dom";
 
 export default function About() {
   return (
-    <div>
+    <div className="about">
+      <div className="back-link-container">
+        <Link to="/" className="back-link">
+          Back to blog
+        </Link>
+      </div>
       <div className="content-container">
         <div className="content-header">
           <p id="quote">
