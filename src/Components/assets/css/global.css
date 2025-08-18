@@ -322,6 +322,13 @@ header .header-content a {
   }
 }
 
+.project-item {
+  margin: 10px 0;
+}
+.project-item a {
+  display: inline;
+}
+
 footer {
   border-top: 1px solid var(--border-color);
   display: flex;

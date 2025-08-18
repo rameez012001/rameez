@@ -1,6 +1,27 @@
 export const about =
   "Still figuring things out, sometimes getting it right, sometimes falling headfirst into pits I didn’t see coming. It ain’t perfect—just late-night thoughts, half-baked plans, and little wins that keep you going. Somewhere in all that chaos and push, I’m just out here trying to make sense of the mess. \nI’m curious about a lot of things—tech, people, tragedies, why we think the way we do, how power works, history, languages, and even random stuff like the math behind games, game theories or how our surroundings shape us. I like pulling at loose threads just to see where they lead, whether it’s a scene from a show or a small detail in everyday life. It’s not about knowing everything, just about connecting the dots bit by bit and paying a little more attention to the patterns along the way.";
 
+export const projectInfo = 
+"I got my first project from friends who had started a company building web templates. My task was turning one of the templates into a React version, and later I joined with them as a frontend dev building templates. I struggled at first with getting pixel-perfect designs, which made me miss out on some projects, but before I left I finally pulled it off.";
+
+export const projects = [
+  {
+    title: "Drake - Portfolio Template:",
+    description: " React version of a portfolio template.",
+    link: "#",
+  },
+  {
+    title: "Uniiq - Photography Template:",
+    description: " Photography portfolio template.",
+    link: "https://wpriverthemes.com/HTML/uniiq/dark-mode/home.html",
+  },
+  {
+    title: "IMTOF:",
+    description: " Website crafted for an exhibition fair company",
+    link: "https://imtof.in/"
+  }
+];
+
 export const reads = [
   {
     title: "1984",

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { projectInfo, projects } from "../assets/data/data";
 
 function Project() {
   return (
@@ -12,16 +13,33 @@ function Project() {
       <div className="content-container">
         <div className="content-header">
           <h1>Projects</h1>
+          
         </div>
         <div className="content">
           <p className="paragraph">
-            Codes I have typed and things I have built.
+            {projectInfo}
           </p>
-          <ul>
-            <p>
-              <i>soon to be updated</i>
-            </p>
-          </ul>
+        </div>
+      </div>
+
+      <div className="content-container">
+        <div className="content-header">
+          <h1><small><i>codes I have typed and things I have built.</i></small></h1>
+          <p className="paragraph">
+            
+          </p>
+        </div>
+        <div className="content">
+          
+          <p>
+            {projects.map((project, index) => (
+              <li key={index} className="project-item">
+                <a href={project.link} target="_blank">{project.title}</a>
+                <span>{project.description}</span>
+              </li>
+            ))}
+
+          </p>
         </div>
       </div>
     </div>
