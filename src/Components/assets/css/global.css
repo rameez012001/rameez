@@ -270,6 +270,10 @@ header .header-content a {
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
+.content-container:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
 .content-container ul li {
   list-style: inside;
 }
@@ -316,4 +320,16 @@ header .header-content a {
     padding: 0.4rem 0.8rem;
     font-size: 14px;
   }
+}
+
+footer {
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  padding: 10px 0;
+}
+footer p {
+  color: var(--list-marker-color);
 }/*# sourceMappingURL=global.css.map */

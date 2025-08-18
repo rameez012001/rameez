@@ -7,6 +7,7 @@ import Project from './Components/jsx/Project';
 import Activities from './Components/jsx/Activities';
 import ThemeToggler from './Components/jsx/ThemeToggler';
 import { useEffect, useState } from 'react';
+import Footer from './Components/jsx/Footer';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/projects" element={<Project />} />
           <Route path="/activities" element={<Activities />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

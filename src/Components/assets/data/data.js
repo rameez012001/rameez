@@ -8,6 +8,11 @@ export const reads = [
     type: "favorite",
   },
   {
+    title: "The Girl on the Train",
+    author: "Paula Hawkins",
+    type: "favorite",
+  },
+  {
     title: "Silent Patient",
     author: "Alex Micaelides",
     type: "favorite",
@@ -21,6 +26,11 @@ export const reads = [
     title: "The Seven Husbands of Evelyn Hugo",
     author: "Taylor Jenkins Reid",
     type: "current",
+  },
+  {
+    title: "Homo Deus: A Brief History of Tomorrow",
+    author: "Yuval Noah Harari",
+    type: "favorite",
   },
 ];
 
@@ -41,11 +51,13 @@ export const articles = [
 
 export const websites = [
   { url: "https://archive.org/", name: "Wayback Machine" },
-  { url: "https://www.theuselessweb.com/", name: "The Useless Web" },
-  { url: "https://www.howmanypeopleareinspacerightnow.com/", name: "How Many People Are in Space Right Now?" },
-  { url: "https://theuselessweb.com/", name: "The Useless Web" },
   { url: "https://serverlesshorrors.com", name: "Serverless Horrors" },
+  { url: "https://theuselessweb.com/", name: "The Useless Web" },
+  {
+    url: "https://www.howmanypeopleareinspacerightnow.com/",
+    name: "How Many People Are in Space Right Now?",
+  },
   { url: "https://pointerpointer.com", name: "Pointer Pointer" },
-  { url: "https://maze.toys/mazes/mini/daily/", name: "Some Daily Mazes" },
   { url: "https://www.thatsthefinger.com/", name: "That's the Finger" },
+  { url: "https://maze.toys/mazes/mini/daily/", name: "Some Daily Mazes" },
 ];
