@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { reads, articles, websites } from "../assets/data/data";
+import { books, articles, websites, contentInfo } from "../assets/data/data";
 function Activities() {
   return (
     <div className="activities">
@@ -14,9 +14,7 @@ function Activities() {
         </div>
         <div className="content">
           <p className="paragraph">
-            My reading began with romance novels. They were giving me the stuff
-            I wasn’t living. Somehow I ended up reading my first crime thrillers
-            and even slid into some classics.
+            {contentInfo.reads}
           </p>
           <div>
             <p>
@@ -25,11 +23,11 @@ function Activities() {
               </b>
             </p>
             <ul className="paragraph">
-              {reads
-                .filter((r) => r.type === "favorite")
-                .map((r, idx) => (
+              {books
+                .filter((book) => book.type === "favorite")
+                .map((book, idx) => (
                   <li key={idx}>
-                    "{r.title}" by {r.author}
+                    "{book.title}" by {book.author}
                   </li>
                 ))}
             </ul>
@@ -41,11 +39,11 @@ function Activities() {
               </b>
             </p>
             <ul className="paragraph">
-              {reads
-                .filter((r) => r.type === "current")
-                .map((r, idx) => (
+              {books
+                .filter((book) => book.type === "current")
+                .map((book, idx) => (
                   <li key={idx}>
-                    "{r.title}" by {r.author}
+                    "{book.title}" by {book.author}
                   </li>
                 ))}
             </ul>
@@ -57,7 +55,7 @@ function Activities() {
           <h1>Websites</h1>
         </div>
         <div className="content">
-          <p className="paragraph">Some oddly cool websites:</p>
+          <p className="paragraph">{contentInfo.websites}</p>
           <ul>
             {websites.map((website, idx) => (
               <a
@@ -78,7 +76,7 @@ function Activities() {
           <h1>Articles</h1>
         </div>
         <div className="content">
-          <p className="paragraph">Sharing some good reads:</p>
+          <p className="paragraph">{contentInfo.articles}</p>
           <ul>
             {articles.map((article, idx) => (
               <a

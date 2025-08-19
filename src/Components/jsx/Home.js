@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { getPosts } from "../assets/data/data";
 
 function Home() {
   const [blog, setBlog] = useState([]);
@@ -7,7 +8,7 @@ function Home() {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://blog-backend-dwxk.onrender.com/posts"
+        getPosts
       );
       const data = await response.json();
       setBlog(data);

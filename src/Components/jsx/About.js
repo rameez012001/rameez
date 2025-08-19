@@ -1,5 +1,5 @@
 import React from "react";
-import { about } from "../assets/data/data";
+import { about, contentInfo } from "../assets/data/data";
 import { Link } from "react-router-dom";
 
 export default function About() {
@@ -14,14 +14,13 @@ export default function About() {
         <div className="content-header">
           <p id="quote">
             <i>
-              "the most amazing things that can happen to human being will
-              happen to you, if you just lower your expectations"
+              "{contentInfo.quote}"
             </i>
           </p>
         </div>
 
         <div className="content">
-          {about.split("\n").map((paragraph, index) => (
+          {contentInfo.about.split("\n").map((paragraph, index) => (
             <p key={index} className="paragraph">
               {paragraph.trim()}
             </p>

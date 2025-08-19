@@ -1,9 +1,20 @@
-export const about =
-  "Still figuring things out, sometimes getting it right, sometimes falling headfirst into pits I didn’t see coming. It ain’t perfect—just late-night thoughts, half-baked plans, and little wins that keep you going. Somewhere in all that chaos and push, I’m just out here trying to make sense of the mess. \nI’m curious about a lot of things—tech, people, tragedies, why we think the way we do, how power works, history, languages, and even random stuff like the math behind games, game theories or how our surroundings shape us. I like pulling at loose threads just to see where they lead, whether it’s a scene from a show or a small detail in everyday life. It’s not about knowing everything, just about connecting the dots bit by bit and paying a little more attention to the patterns along the way.";
+export const author = "Rameez Hameed";
 
-export const projectInfo = 
-"I got my first project from friends who had started a company building web templates. My task was turning one of the templates into a React version, and later I joined with them as a frontend dev building templates. I struggled at first with getting pixel-perfect designs, which made me miss out on some projects, but before I left I finally pulled it off.";
+export const contentInfo = {
+  about:"Still figuring things out, sometimes getting it right, sometimes falling headfirst into pits I didn’t see coming. It ain’t perfect—just late-night thoughts, half-baked plans, and little wins that keep you going. Somewhere in all that chaos and push, I’m just out here trying to make sense of the mess. \nI’m curious about a lot of things—tech, people, tragedies, why we think the way we do, how power works, history, languages, and even random stuff like the math behind games, game theories or how our surroundings shape us. I like pulling at loose threads just to see where they lead, whether it’s a scene from a show or a small detail in everyday life. It’s not about knowing everything, just about connecting the dots bit by bit and paying a little more attention to the patterns along the way.",
 
+  quote:"the most amazing things that can happen to human being will happen to you, if you just lower your expectations",
+
+  projects:"I got my first project from friends who had started a company building web templates. My task was turning one of the templates into a React version, and later I joined with them as a frontend dev building templates. I struggled at first with getting pixel-perfect designs, which made me miss out on some projects, but before I left I finally pulled it off.",
+
+  reads:"My reading began with romance novels. They were giving me the stuff I wasn’t living. Somehow I ended up reading my first crime thrillers and even slid into some classics.",
+
+  websites:"Some oddly cool websites:",
+
+  articles:"Sharing some good reads:"
+};
+
+export const navigations = ["About", "Projects", "Activities"];
 export const projects = [
   {
     title: "Drake - Portfolio Template:",
@@ -22,7 +33,7 @@ export const projects = [
   }
 ];
 
-export const reads = [
+export const books = [
   {
     title: "1984",
     author: "George Orwell",
@@ -82,3 +93,6 @@ export const websites = [
   { url: "https://www.thatsthefinger.com/", name: "That's the Finger" },
   { url: "https://maze.toys/mazes/mini/daily/", name: "Some Daily Mazes" },
 ];
+
+
+export const getPosts = "https://blog-backend-dwxk.onrender.com/posts";

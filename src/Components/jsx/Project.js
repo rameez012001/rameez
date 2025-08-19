@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { projectInfo, projects } from "../assets/data/data";
+import { projects, contentInfo } from "../assets/data/data";
 
 function Project() {
   return (
@@ -13,11 +13,11 @@ function Project() {
       <div className="content-container">
         <div className="content-header">
           <h1>Projects</h1>
-          
+
         </div>
         <div className="content">
           <p className="paragraph">
-            {projectInfo}
+            {contentInfo.projects}
           </p>
         </div>
       </div>
@@ -26,11 +26,11 @@ function Project() {
         <div className="content-header">
           <h1><small><i>codes I have typed and things I have built.</i></small></h1>
           <p className="paragraph">
-            
+
           </p>
         </div>
         <div className="content">
-          
+
           <p>
             {projects.map((project, index) => (
               <li key={index} className="project-item">

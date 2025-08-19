@@ -11,7 +11,9 @@ import Footer from './Components/jsx/Footer';
 
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(()=>{
+    return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  });
 
   useEffect(() => {
     document.body.classList.remove("theme--light", "theme--dark");
