@@ -197,7 +197,7 @@ header .header-content #name {
   margin: 0;
 }
 header .header-content a {
-  color: var(--primary-color);
+  color: var(--header-color);
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;

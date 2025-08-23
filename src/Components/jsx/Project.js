@@ -16,9 +16,7 @@ function Project() {
 
         </div>
         <div className="content">
-          <p className="paragraph">
-            {contentInfo.projects}
-          </p>
+          {contentInfo.projects.split("\n").map((content,index)=><p key={index} className="paragraph">{content}</p>)}  
         </div>
       </div>
 

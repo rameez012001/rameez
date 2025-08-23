@@ -5,11 +5,11 @@ export const contentInfo = {
 
   quote:"the most amazing things that can happen to human being will happen to you, if you just lower your expectations",
 
-  projects:"I got my first project from friends who had started a company building web templates. My task was turning one of the templates into a React version, and later I joined with them as a frontend dev building templates. I struggled at first with getting pixel-perfect designs, which made me miss out on some projects, but before I left I finally pulled it off.",
+  projects:" During quarantine, started by building static sites and uploading them to Frontend Mentor for feedback, to learning JavaScript and eventually React. The first project was with friends, turning web template into its React version. Later, joined them in creating web templates. Difficulties with pixel-perfect designs caused some projects slipped by, but before I left I finally pulled it off.",
 
-  reads:"My reading began with romance novels. They were giving me the stuff I wasn’t living. Somehow I ended up reading my first crime thrillers and even slid into some classics.",
+  reads:" Never used to read but somehow began with self-help books — simple, easy to follow, full on points on how to be better, but never acted on it. I then read romance novels —romance experienced through fiction— and a few good ones pulled me into reading, would say I more of a seasonal reader. Later I moved on to crime thrillers and classics.",
 
-  websites:"Some oddly cool websites:",
+  websites:"Some oddly cool websites — best viewed on desktop:",
 
   articles:"Sharing some good reads:"
 };
