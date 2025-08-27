@@ -10,8 +10,12 @@ body.theme--light {
   --skeleton-gradient-end: #ddd;
   --skeleton-bg: #f9f9f9;
   --border-color: #eaeaea;
-  --black: ;
-  --white: ;
+  --success-bg: #d4edda;
+  --success-text: #155724;
+  --success-border: #28a745;
+  --error-bg: #f8d7da;
+  --error-text: #721c24;
+  --error-border: #dc3545;
   --link-color-dark: darken(var(--link-color), 20%);
 }
 
@@ -26,8 +30,12 @@ body.theme--dark {
   --skeleton-gradient-end: #444;
   --skeleton-bg: #222;
   --border-color: #444;
-  --black: ;
-  --white: ;
+  --success-bg: #1e2a1e;
+  --success-text: #c6f6c6;
+  --success-border: #3c9d3c;
+  --error-bg: #2a1d1d;
+  --error-text: #ffb3b3;
+  --error-border: #ff6b6b;
   --link-color-dark: darken(var(--link-color), 20%);
 }
 
@@ -328,6 +336,11 @@ header .header-content a {
 .project-item a {
   display: inline;
 }
+@media screen and (max-width: 600px) {
+  .project-item {
+    font-size: 14px;
+  }
+}
 
 footer {
   border-top: 1px solid var(--border-color);
@@ -339,4 +352,99 @@ footer {
 }
 footer p {
   color: var(--list-marker-color);
+}
+
+.loginForm, .postBlog {
+  margin-top: 20px;
+}
+.loginForm button, .postBlog button {
+  background-color: var(--skeleton-bg);
+  color: var(--text-color);
+  width: 100%;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.loginForm button:hover, .postBlog button:hover {
+  opacity: 0.9;
+}
+.loginForm button:focus-visible, .postBlog button:focus-visible {
+  background-color: var(--skeleton-gradient-end);
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+.loginForm input, .loginForm textarea, .loginForm button {
+  max-width: 200px;
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  outline: none;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+input:focus, textarea:focus {
+  border-color: var(--link-color-dark);
+}
+
+textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+#success-response {
+  border: 2px solid var(--success-border);
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+#error-response {
+  border: 2px solid var(--error-border);
+  background-color: var(--error-bg);
+  color: var(--error-text);
+}
+
+#success-response, #error-response {
+  font-style: italic;
+  margin: 20px auto;
+  max-width: 200px;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  animation: fadeScaleIn 0.6s ease-out forwards;
+}
+@media screen and (max-width: 600px) {
+  #success-response, #error-response {
+    padding: 5px;
+  }
+}
+
+@keyframes fadeScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=global.css.map */

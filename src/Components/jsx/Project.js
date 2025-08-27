@@ -22,22 +22,20 @@ function Project() {
 
       <div className="content-container">
         <div className="content-header">
-          <h1><small><i>codes I have typed and things I have built.</i></small></h1>
+          <h1><small><i>Codes I have typed and things I have built.</i></small></h1>
           <p className="paragraph">
 
           </p>
         </div>
         <div className="content">
 
-          <p>
             {projects.map((project, index) => (
-              <li key={index} className="project-item">
-                <a href={project.link} target="_blank">{project.title}</a>
+              <p key={index} className="project-item">
+                <a href={project.link} target="_blank" rel="noreferrer">{project.title}</a>
                 <span>{project.description}</span>
-              </li>
+              </p>
             ))}
 
-          </p>
         </div>
       </div>
     </div>

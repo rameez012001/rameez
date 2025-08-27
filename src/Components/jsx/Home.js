@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getPosts } from "../assets/data/data";
+import { backendURL } from "../assets/data/data";
 
 function Home() {
   const [blog, setBlog] = useState([]);
@@ -8,7 +8,7 @@ function Home() {
     setLoading(true);
     try {
       const response = await fetch(
-        getPosts
+        `${backendURL}/posts`
       );
       const data = await response.json();
       setBlog(data);

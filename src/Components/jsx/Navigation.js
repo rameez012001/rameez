@@ -5,8 +5,8 @@ function Navigation() {
   return (
     <nav className="navigation">
       <ul className="nav-links">
-        {navigations.map(navlink => (
-          <li>
+        {navigations.map((navlink,index) => (
+          <li key={index}>
             <NavLink to={`/${navlink.toLowerCase()}`} className={({isActive})=>(isActive?"active":undefined)}>
             {navlink}
             </NavLink>

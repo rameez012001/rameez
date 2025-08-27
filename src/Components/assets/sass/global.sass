@@ -5,16 +5,22 @@ $black: #000,
 $white: #fff,
 
 $light-theme: (
-backgroundcolor: #fff,
-textcolor: #000,
-primary: #555,
-header: #2b6cc2,
-link: #6c757d,
+    backgroundcolor: #fff,
+    textcolor: #000,
+    primary: #555,
+    header: #2b6cc2,
+    link: #6c757d,
     list-marker: #999,
     skeleton-gradient-start: #eee,
     skeleton-gradient-end: #ddd,
     skeleton-bg: #f9f9f9,
     border: #eaeaea,
+    successbg: #d4edda,
+    successtext: #155724,
+    successborder: #28a745,
+    errorbg: #f8d7da,
+    errortext: #721c24,
+    errorborder: #dc3545
 )
 $dark-theme: (
     backgroundcolor: #000,
@@ -22,11 +28,17 @@ $dark-theme: (
     primary: #ccc,
     header: #90caf9,
     link: #adb5bd,
-        list-marker: #777,
-        skeleton-gradient-start: #333,
-        skeleton-gradient-end: #444,
-        skeleton-bg: #222,
-        border: #444,
+    list-marker: #777,
+    skeleton-gradient-start: #333,
+    skeleton-gradient-end: #444,
+    skeleton-bg: #222,
+    border: #444,
+    successbg: #1e2a1e,
+    successtext: #c6f6c6,
+    successborder: #3c9d3c,
+    errorbg: #2a1d1d,
+    errortext: #ffb3b3,
+    errorborder: #ff6b6b
 )
 
 @mixin theme($map)
@@ -40,9 +52,14 @@ $dark-theme: (
     --skeleton-gradient-end: #{map.get($map, skeleton-gradient-end)}
     --skeleton-bg: #{map.get($map, skeleton-bg)}
     --border-color: #{map.get($map, border)}
-    --black: #{map.get($map, black)}
-    --white: #{map.get($map, white)}
+    --success-bg: #{map.get($map, successbg)}
+    --success-text: #{map.get($map, successtext)}
+    --success-border: #{map.get($map, successborder)}
+    --error-bg: #{map.get($map, errorbg)}
+    --error-text: #{map.get($map, errortext)}
+    --error-border: #{map.get($map, errorborder)}
     --link-color-dark: darken(var(--link-color), 20%)
+    
 
 body.theme--light
   @include theme($light-theme)
@@ -277,6 +294,9 @@ header
     margin: 10px 0
     a
         display: inline            
+    @media screen and (max-width: 600px)
+        font-size: 14px
+        
 footer
     border-top: 1px solid var(--border-color)
     display: flex
@@ -286,3 +306,74 @@ footer
     padding: 10px 0
     p
         color: var(--list-marker-color)
+
+.loginForm, .postBlog
+    margin-top: 20px
+    button
+        background-color: var(--skeleton-bg)
+        color: var(--text-color)
+        width: 100%
+        font-weight: bold
+        padding: 0.6rem 1.2rem
+        border: 1px solid var(--border-color)
+        border-radius: 4px
+        cursor: pointer
+        &:hover
+            opacity: 0.9
+        &:focus-visible
+            background-color: var(--skeleton-gradient-end)
+.loginForm
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    min-height: 50vh
+    input,textarea,button
+        max-width: 200px
+input,textarea
+    display: block
+    width: 100%
+    margin-bottom: 15px
+    padding: 10px
+    font-size: 16px
+    border: 1px solid var(--border-color)
+    border-radius: 4px
+    outline: none
+    background-color: var(--bg-color)
+    color: var(--text-color)
+    &:focus
+      border-color: var(--link-color-dark)
+
+textarea
+    min-height: 200px
+    resize: vertical
+#success-response
+    border: 2px solid var(--success-border)
+    background-color: var(--success-bg)
+    color: var(--success-text)
+#error-response
+    border: 2px solid var(--error-border)
+    background-color: var(--error-bg)
+    color: var(--error-text)
+#success-response, #error-response
+    font-style: italic
+    margin: 20px auto
+    max-width: 200px
+    padding: 5px
+    font-size: 12px
+    border-radius: 4px
+    font-weight: bold
+    animation: fadeScaleIn 0.6s ease-out forwards
+    @media screen and (max-width: 600px)
+        padding: 5px
+
+@keyframes fadeScaleIn
+  0%
+    opacity: 0
+    transform: scale(0.9)
+  60%
+    opacity: 1
+    transform: scale(1.05)
+  100%
+    opacity: 1
+    transform: scale(1)

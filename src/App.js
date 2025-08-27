@@ -8,6 +8,9 @@ import Activities from './Components/jsx/Activities';
 import ThemeToggler from './Components/jsx/ThemeToggler';
 import { useEffect, useState } from 'react';
 import Footer from './Components/jsx/Footer';
+import Admin from './Components/jsx/Admin';
+import PostBlog from './Components/jsx/PostBlog';
+import ProtectedRoute from './Components/jsx/ProtectedRoute';
 
 
 function App() {
@@ -30,6 +33,12 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Project />} />
           <Route path="/activities" element={<Activities />} />
+          <Route path="/login" element={<Admin/>}/>
+          <Route path="/postBlog" element={
+            <ProtectedRoute>
+              <PostBlog/>
+            </ProtectedRoute>
+          }/>
         </Routes>
         <Footer />
       </BrowserRouter>

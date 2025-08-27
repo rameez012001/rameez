@@ -1,5 +1,5 @@
 import React from "react";
-import { about, contentInfo } from "../assets/data/data";
+import { contentInfo } from "../assets/data/data";
 import { Link } from "react-router-dom";
 
 export default function About() {
