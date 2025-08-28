@@ -412,7 +412,7 @@ textarea {
   color: var(--success-text);
 }
 
-#error-response {
+#error-response, #deleteButton {
   border: 2px solid var(--error-border);
   background-color: var(--error-bg);
   color: var(--error-text);
@@ -447,4 +447,9 @@ textarea {
     opacity: 1;
     transform: scale(1);
   }
+}
+#deleteButton {
+  font-weight: bold;
+  padding: 0.6rem;
+  border-radius: 4px;
 }/*# sourceMappingURL=global.css.map */

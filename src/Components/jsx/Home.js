@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { backendURL } from "../assets/data/data";
+import DeleteButton from "./DeleteButton";
 
 function Home() {
   const [blog, setBlog] = useState([]);
@@ -7,11 +8,9 @@ function Home() {
   const fetchBlog = async () => {
     setLoading(true);
     try {
-      const response = await fetch(
-        `${backendURL}/posts`
-      );
+      const response = await fetch(`${backendURL}/posts`);
       const data = await response.json();
-      setBlog(data);
+      setBlog(data.posts);
     } catch (error) {
       console.error("Error fetching blog data:", error);
     } finally {
@@ -36,6 +35,18 @@ function Home() {
       ) : (
         blog.map((post) => (
           <div key={post.id} className="content-container">
+            {localStorage.getItem("auth-token") && (
+              <DeleteButton
+                blogId={post.id}
+                onDelete={() =>
+                  setBlog((prev) => prev.filter((b) => b.id !== post.id))
+                }
+                onAuthFail={() => {
+                  localStorage.removeItem("auth-token");
+                  window.location.reload(); 
+                }}
+              />
+            )}
             <div className="content-header">
               <span className="date">
                 {new Date(post.date).toLocaleDateString("en-IN", {
