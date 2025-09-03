@@ -20,21 +20,13 @@ function PostBlog() {
 
   const postBlog = async () => {
 
-    const token = localStorage.getItem("auth-token");
-    if (!token) {
-      setStatus("error")
-      setMessage("Intruder, stay way");
-      // alert("Intruder, stay way");
-      return;
-    }
-
     try {
       const res = await fetch(`${backendURL}/postablog`, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
+        credentials:"include",
         body: JSON.stringify(blog),
       });
 

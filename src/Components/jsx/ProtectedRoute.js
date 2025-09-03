@@ -1,23 +1,30 @@
 import { jwtDecode } from "jwt-decode";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import { backendURL } from "../assets/data/data";
 
 function ProtectedRoute({ children }) {
-  const token = localStorage.getItem("auth-token");
-  if (!token) {
-    return <Navigate to="/login" replace />;
-  }
-  try {
-    const { exp } = jwtDecode(token);
-    if (Date.now() >= exp * 1000) {
-      localStorage.removeItem("auth-token");
-      return <Navigate to="/login" replace />;
+  const [token, setToken] = useState(null);
+  const verifyAuth = async () => {
+    try {
+      const res = await fetch(`${backendURL}/auth-verify`, {
+        method: "GET",
+        credentials: "include",
+      });
+      setToken(res.ok);
+    } catch {
+      setToken(false);
     }
-  } catch (error) {
-    localStorage.removeItem("auth-token");
-    return <Navigate to="/login" replace />;
+  };
+
+  useEffect(() => {
+    verifyAuth();
+  }, []);
+
+  if (token === null) {
+    return <div>Loading...</div>;
   }
-  return children;
+  return token ? children : <Navigate to="/login" replace />;
 }
 
 export default ProtectedRoute;

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { backendURL } from "../assets/data/data";
 import DeleteButton from "./DeleteButton";
+import { use } from "react";
 
 function Home() {
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const fetchBlog = async () => {
     setLoading(true);
     try {
@@ -18,8 +20,21 @@ function Home() {
     }
   };
 
+  const checkAuth = async()=>{
+    try{
+      const res = await fetch(`${backendURL}/auth-verify`, {
+        method: "GET",
+        credentials: "include",
+      });
+      setIsAuthenticated(res.ok);
+    }catch(err){
+      setIsAuthenticated(false);
+    }
+  }
+
   useEffect(() => {
     fetchBlog();
+    checkAuth();
   }, []);
 
   return (
@@ -35,14 +50,14 @@ function Home() {
       ) : (
         blog.map((post) => (
           <div key={post.id} className="content-container">
-            {localStorage.getItem("auth-token") && (
+            {isAuthenticated && (
               <DeleteButton
                 blogId={post.id}
                 onDelete={() =>
                   setBlog((prev) => prev.filter((b) => b.id !== post.id))
                 }
                 onAuthFail={() => {
-                  localStorage.removeItem("auth-token");
+                  setIsAuthenticated(false);
                   window.location.reload(); 
                 }}
               />

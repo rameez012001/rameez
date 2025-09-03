@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ErrorComponent from "./ErrorComponent";
@@ -9,12 +8,15 @@ function Admin() {
     username: "",
     password: "",
   });
+
   const [status, setStatus] = useState(null);
   const [message, setMessage] = useState("");
   const fillCredentials = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
+
   const navigate = useNavigate();
+
   const login = async () => {
     try {
       const res = await fetch(`${backendURL}/login`, {
@@ -23,10 +25,9 @@ function Admin() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(credentials),
+        credentials: "include",
       });
-      const data = await res.json();
-      if (data.tokenType === "Bearer") {
-        localStorage.setItem("auth-token", data.accessToken);
+      if (res.ok) {
         setStatus("success");
         setCredentials({
           username: "",
@@ -34,8 +35,9 @@ function Admin() {
         });
         navigate("/postblog");
       } else {
+        const data = await res.json();
         setStatus("error");
-        setMessage(data.error);
+        setMessage(data.error || "Login Failed");
         navigate("/login");
       }
     } catch (err) {
