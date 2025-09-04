@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ErrorComponent from "./ErrorComponent";
 import { backendURL } from "../assets/data/data";
+import { AuthContext } from "../../Authprotocol";
 
 function Admin() {
   const [credentials, setCredentials] = useState({
@@ -16,17 +17,11 @@ function Admin() {
   };
 
   const navigate = useNavigate();
+  const {login} = useContext(AuthContext);
 
-  const login = async () => {
+  const handleLogin = async () => {
     try {
-      const res = await fetch(`${backendURL}/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(credentials),
-        credentials: "include",
-      });
+      const res = await login(credentials);
       if (res.ok) {
         setStatus("success");
         setCredentials({
@@ -65,7 +60,7 @@ function Admin() {
           value={credentials.password}
           onChange={fillCredentials}
         />
-        <button onClick={login}>Login</button>
+        <button onClick={handleLogin}>Login</button>
       </div>
     </div>
   );

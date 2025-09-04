@@ -1,30 +1,14 @@
 import { jwtDecode } from "jwt-decode";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { backendURL } from "../assets/data/data";
+import { AuthContext } from "../../Authprotocol";
 
 function ProtectedRoute({ children }) {
   const [token, setToken] = useState(null);
-  const verifyAuth = async () => {
-    try {
-      const res = await fetch(`${backendURL}/auth-verify`, {
-        method: "GET",
-        credentials: "include",
-      });
-      setToken(res.ok);
-    } catch {
-      setToken(false);
-    }
-  };
+  const{isAuthenticated} = useContext(AuthContext);
 
-  useEffect(() => {
-    verifyAuth();
-  }, []);
-
-  if (token === null) {
-    return <div>Loading...</div>;
-  }
-  return token ? children : <Navigate to="/login" replace />;
+  return isAuthenticated ? children : <Navigate to="/login" replace />;
 }
 
 export default ProtectedRoute;

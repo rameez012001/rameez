@@ -93,6 +93,10 @@ img {
   display: block;
 }
 
+button {
+  cursor: pointer;
+}
+
 .clearfix::after {
   content: "";
   display: table;
@@ -254,12 +258,26 @@ header .header-content a {
   }
 }
 
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+.navigation .nav-actions {
+  padding: 10px 0;
+}
+.navigation #logoutButton {
+  font-weight: bold;
+  padding: 8px 0.4rem;
+  border-radius: 4px;
+}
+
 .nav-links {
   display: flex;
   gap: 20px;
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 .nav-links li {
   font-size: 14px;
@@ -412,7 +430,7 @@ textarea {
   color: var(--success-text);
 }
 
-#error-response, #deleteButton {
+#error-response, #deleteButton, #logoutButton {
   border: 2px solid var(--error-border);
   background-color: var(--error-bg);
   color: var(--error-text);

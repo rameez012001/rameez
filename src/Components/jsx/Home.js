@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { backendURL } from "../assets/data/data";
 import DeleteButton from "./DeleteButton";
-import { use } from "react";
+import { AuthContext } from "../../Authprotocol";
 
 function Home() {
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const {isAuthenticated} = useContext(AuthContext);
   const fetchBlog = async () => {
     setLoading(true);
     try {
@@ -20,21 +20,8 @@ function Home() {
     }
   };
 
-  const checkAuth = async()=>{
-    try{
-      const res = await fetch(`${backendURL}/auth-verify`, {
-        method: "GET",
-        credentials: "include",
-      });
-      setIsAuthenticated(res.ok);
-    }catch(err){
-      setIsAuthenticated(false);
-    }
-  }
-
   useEffect(() => {
     fetchBlog();
-    checkAuth();
   }, []);
 
   return (
@@ -57,7 +44,6 @@ function Home() {
                   setBlog((prev) => prev.filter((b) => b.id !== post.id))
                 }
                 onAuthFail={() => {
-                  setIsAuthenticated(false);
                   window.location.reload(); 
                 }}
               />

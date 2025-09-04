@@ -122,7 +122,8 @@ img
     max-width: 100%
     height: auto
     display: block
-
+button
+    cursor: pointer
 // Utility classes
 .clearfix
     @include clearfix
@@ -234,12 +235,22 @@ header
             height: 12px
             top: 1px
 
+.navigation
+    display: flex
+    justify-content: space-between
+    .nav-actions
+        padding: 10px 0
+    #logoutButton
+        font-weight: bold
+        padding: 8px .4rem
+        border-radius: 4px
 .nav-links
     display: flex
     gap: 20px
     list-style: none
     margin: 0
     padding: 0
+    align-items: center
     li
         font-size: 14px
         a
@@ -351,7 +362,7 @@ textarea
     border: 2px solid var(--success-border)
     background-color: var(--success-bg)
     color: var(--success-text)
-#error-response,#deleteButton
+#error-response,#deleteButton, #logoutButton
     border: 2px solid var(--error-border)
     background-color: var(--error-bg)
     color: var(--error-text)
