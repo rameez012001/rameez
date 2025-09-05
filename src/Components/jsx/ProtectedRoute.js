@@ -1,7 +1,5 @@
-import { jwtDecode } from "jwt-decode";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { backendURL } from "../assets/data/data";
 import { AuthContext } from "../../Authprotocol";
 
 function ProtectedRoute({ children }) {
