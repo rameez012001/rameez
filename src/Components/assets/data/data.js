@@ -8,10 +8,10 @@ export const contentInfo = {
     "the most amazing things that can happen to human being will happen to you, if you just lower your expectations",
 
   projects:
-    " During quarantine, started by building static sites and uploading them to Frontend Mentor for feedback, to learning JavaScript and eventually React. The first project was with friends, turning web template into its React version. Later, joined them in creating web templates. Difficulties with pixel-perfect designs caused some projects slipped by, but before I left I finally pulled it off.",
+    " When I look back at the things I started building after learning web development, it feels so lame that I did so little yet considered myself something more. I didn’t even know how to position an element, and my work would get rejected every time I uploaded it to Frontend Mentor. And to be able to refactor webpages and develop templates from designs is what makes me realize how far I’ve come. I know I still have a lot more to learn.",
 
   reads:
-    " Never used to read but somehow began with self-help books — simple, easy to follow, full on points on how to be better, but never acted on it. I then read romance novels —romance experienced through fiction— and a few good ones pulled me into reading, would say I more of a seasonal reader. Later I moved on to crime thrillers and classics.",
+    " Not an avid reader, but a real page-turner can definitely make me one. I used to read romance novels because they give me an experience simply by consuming them. Self-help books are BS, but they can be great starters for amateurs or wannabes since they give an idea of what one could be and also easy to read because they’re full of points and anecdotes. I don’t know where this obsession with tragedies came from, but it pulls me toward classics.",
 
   websites: "Some oddly cool websites — best viewed on desktop:",
 
