@@ -21,6 +21,11 @@ export const contentInfo = {
 export const navigations = ["About", "Projects", "Activities"];
 export const projects = [
   {
+    title: "Absolute Overthinker",
+    description: " Give it a scenario it will overthink for you and like you. It also mirror your language.",
+    link: "https://chatgpt.com/g/g-68cd0d0bc6e88191afea724d655f691a-absolute-overthinker",
+  },
+  {
     title: "LedgerGPT",
     description: " Custom GPT to manage your expenses. Start with “Hi” to begin expense tracking.",
     link: "https://chatgpt.com/g/g-68ad445732cc8191a67399bfff78d55d-ledgergpt",
@@ -105,3 +110,4 @@ export const websites = [
 ];
 
 export const backendURL = "https://blog-backend-dwxk.onrender.com";
+// export const backendURL = "http://localhost:4598";
